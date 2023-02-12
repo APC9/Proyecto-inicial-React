@@ -16,7 +16,7 @@ export const ProductCart = ({ product }: Props) => {
     const { counter, increaseBy } = useProduct();
 
     const num1: number = 0;
-    if (num1 == counter) {
+    if (num1 === counter) {
         console.log('hola');
     }
 
