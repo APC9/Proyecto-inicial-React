@@ -1,0 +1,18 @@
+.bg-dark{
+    background-color: rgb(56, 56, 56);
+}
+
+.text-blue{
+    color: blue;
+}
+
+.custom-image{
+    margin: 10px;
+    border: 5px solid blue;
+}
+
+.custon-buttons button, .custon-buttons div{
+    background-color: red;
+    color: white;
+    border-color: white
+}

@@ -1,13 +1,20 @@
-import { useContext } from 'react';
+import { useContext, CSSProperties } from 'react';
 import { ProductContext } from './ProductCart';
 import styles from '../style/styles.module.css';
 
-// eslint-disable-next-line prettier/prettier
-export const ProductButtons = () => {
+export interface buttonsProps {
+    className?: string;
+    style?: CSSProperties;
+}
+
+export const ProductButtons = ({ className, style }: buttonsProps) => {
     const { increaseBy, counter } = useContext(ProductContext);
 
     return (
-        <div className={styles.buttonsContainer}>
+        <div
+            className={`${styles.buttonsContainer} ${className}`}
+            style={style}
+        >
             <button
                 className={styles.buttonMinus}
                 onClick={() => increaseBy(-1)}
