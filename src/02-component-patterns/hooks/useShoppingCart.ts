@@ -10,23 +10,7 @@ export const useShoppingCart = () => {
     // eslint-disable-next-line prettier/prettier
     const onProductCountChange = ({ count, product }: {count:number, product: Product}) => {
         setShoppingCart((oldshoppingCart) => {
-            const productInCart: ProductInCart = oldshoppingCart[
-                product.id
-            ] || { ...product, count: 0 };
-
-            if (Math.max(productInCart.count + count, 0) > 0) {
-                productInCart.count += count;
-                return {
-                    ...oldshoppingCart,
-                    [product.id]: productInCart,
-                };
-            }
-
-            //Borrar el producto
-            const { [product.id]: toDelete, ...rest } = oldshoppingCart;
-            return { ...rest };
-
-            /* if (count === 0) {
+            if (count === 0) {
                 const { [product.id]: toDelete, ...rest } = oldshoppingCart;
                 return { ...rest };
             }
@@ -34,7 +18,7 @@ export const useShoppingCart = () => {
             return {
                 ...oldshoppingCart,
                 [product.id]: { ...product, count },
-            }; */
+            };
         });
     };
 
