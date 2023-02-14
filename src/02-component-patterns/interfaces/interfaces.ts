@@ -21,3 +21,13 @@ export interface ProductCardHOCProps {
     Image: (props: imageProsp) => JSX.Element;
     Buttons: (props: buttonsProps) => JSX.Element;
 }
+
+export interface onChangeArgs {
+    product: Product;
+    count: number;
+}
+
+//Es una interfaz de tipo productos y le se le agrega otra propiedad con la palabra extends
+export interface ProductInCart extends Product {
+    count: number;
+}
