@@ -12,6 +12,7 @@ export interface Product {
 export interface ProductContextProps {
     product: Product;
     counter: number;
+    maxCount?: number;
     increaseBy: (value: number) => void;
 }
 
@@ -30,4 +31,19 @@ export interface onChangeArgs {
 //Es una interfaz de tipo productos y le se le agrega otra propiedad con la palabra extends
 export interface ProductInCart extends Product {
     count: number;
+}
+
+export interface initialValues {
+    count?: number;
+    maxCount?: number;
+}
+
+export interface ProductCardHandlers {
+    count: number;
+    isMaxCountReached: boolean;
+    maxCount?: number;
+    product: Product;
+
+    increaseBy: (value: number) => void;
+    reset: () => void;
 }

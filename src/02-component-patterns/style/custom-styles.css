@@ -30,3 +30,7 @@
 .shopping-card img{
     width: 100%;
 }
+
+.eliminar{
+    display: none
+}

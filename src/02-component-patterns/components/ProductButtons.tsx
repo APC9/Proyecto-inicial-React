@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react';
 import { useContext, CSSProperties } from 'react';
 import { ProductContext } from './ProductCart';
 import styles from '../style/styles.module.css';
@@ -7,28 +8,40 @@ export interface buttonsProps {
     style?: CSSProperties;
 }
 
-export const ProductButtons = ({ className, style }: buttonsProps) => {
-    const { increaseBy, counter } = useContext(ProductContext);
+export const ProductButtons = React.memo(
+    ({ className, style }: buttonsProps) => {
+        const { increaseBy, counter, maxCount } = useContext(ProductContext);
 
-    return (
-        <div
-            className={`${styles.buttonsContainer} ${className}`}
-            style={style}
-        >
-            <button
-                className={styles.buttonMinus}
-                onClick={() => increaseBy(-1)}
+        const isMAxReached = useCallback(
+            () => Boolean(maxCount) && counter === maxCount,
+            [counter, maxCount]
+        );
+
+        return (
+            <div
+                className={`${styles.buttonsContainer} ${className}`}
+                style={style}
             >
-                {' '}
-                -{' '}
-            </button>
+                <button
+                    className={styles.buttonMinus}
+                    onClick={() => increaseBy(-1)}
+                >
+                    {' '}
+                    -{' '}
+                </button>
 
-            <div className={styles.countLabel}>{counter}</div>
+                <div className={styles.countLabel}>{counter}</div>
 
-            <button className={styles.buttonAdd} onClick={() => increaseBy(1)}>
-                {' '}
-                +{' '}
-            </button>
-        </div>
-    );
-};
+                <button
+                    className={`${styles.buttonAdd} ${
+                        isMAxReached() ? styles.disable : ''
+                    }`}
+                    onClick={() => increaseBy(1)}
+                >
+                    {' '}
+                    +{' '}
+                </button>
+            </div>
+        );
+    }
+);

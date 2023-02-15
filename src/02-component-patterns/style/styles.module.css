@@ -28,7 +28,7 @@
 .buttonMinus {
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 5px 0px 0px 5px;
     font-size: 20px;
     width: 30px;
@@ -39,8 +39,8 @@
 }
 
 .countLabel {
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    border-top: 1px solid rgb(255, 255, 255);
     font-size: 16px;
     height: 25px;
     padding-top: 5px;
@@ -51,7 +51,7 @@
 .buttonAdd {
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid rgb(244, 244, 244);
     border-radius: 0px 5px 5px 0px;
     font-size: 20px;
     width: 30px;
@@ -59,4 +59,10 @@
 
 .buttonAdd:hover {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.disable{
+    border-color: gray !important;
+    border-left: white !important;
+    color: gray !important;
 }
