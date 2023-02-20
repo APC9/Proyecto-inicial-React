@@ -1,0 +1,101 @@
+[
+  {
+    "type": "text",
+    "name": "firstNAme",
+    "placeholder": "First Name",
+    "label": "First Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "minLength",
+        "value": 5 
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "name": "lastNAme",
+    "placeholder": "Last Name",
+    "label": "Last Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      }
+    ]
+  },
+  {
+    "type": "email",
+    "name": "email",
+    "placeholder": "your_email@email.com",
+    "label": "Email",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "email"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "name": "game",
+    "label": "Favorite Game",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "Football"
+      },
+      {
+        "id": "2",
+        "label": "Baseball"
+      },
+      {
+        "id": "3",
+        "label": "Basketball"
+      },
+      {
+        "id": "4",
+        "label": "waterpolo"
+      }
+    ]
+  },
+  {
+    "type": "password",
+    "name": "password",
+    "placeholder": "Password",
+    "label": "Password",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "password"
+      }
+    ]
+  },
+  {
+    "type": "password",
+    "name": "password2",
+    "placeholder": "Repeat Password",
+    "label": "Password2",
+    "value": "",
+    "validations": [
+      {
+        "type": "password2"
+      }
+    ]
+  }
+]
